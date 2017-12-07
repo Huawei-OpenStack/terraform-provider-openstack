@@ -204,6 +204,7 @@ func Provider() terraform.ResourceProvider {
 			"openstack_networking_secgroup_rule_v2":     resourceNetworkingSecGroupRuleV2(),
 			"openstack_objectstorage_container_v1":      resourceObjectStorageContainerV1(),
 			"openstack_objectstorage_object_v1":         resourceObjectStorageObjectV1(),
+			"openstack_vpc_eip_v1":                      resourceVpcEIPV1(),
 		},
 
 		ConfigureFunc: configureProvider,

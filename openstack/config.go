@@ -258,3 +258,10 @@ func (c *Config) getEndpointType() gophercloud.Availability {
 	}
 	return gophercloud.AvailabilityPublic
 }
+
+func (c *Config) vpcV1Client(region string) (*gophercloud.ServiceClient, error) {
+	return openstack.NewVpcServiceV1(c.OsClient, gophercloud.EndpointOpts{
+		Region:       c.determineRegion(region),
+		Availability: c.getEndpointType(),
+	})
+}
